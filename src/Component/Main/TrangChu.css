@@ -1,0 +1,48 @@
+.banner1 {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.banner1 img {
+  width: 98%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.banner2 {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.banner2 img {
+  width: 98%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.slider div {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.slider div img {
+  width: 99%;
+  border-radius: 10px;
+}
+.slider div img:hover {
+  box-shadow: 5px 5px 5px 5px rgba(194, 190, 190, 0.809);
+}/*# sourceMappingURL=TrangChu.css.map */

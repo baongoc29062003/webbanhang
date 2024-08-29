@@ -1,0 +1,117 @@
+@charset "UTF-8";
+.detail-container {
+  max-width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+.detail-container .detailImg {
+  width: 45%;
+  height: auto;
+  animation: slideInLeft 1.5s forwards;
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%); /* Bắt đầu từ ngoài màn hình bên trái */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.detail-container .detailImg .mySlides {
+  display: none;
+}
+.detail-container .detailImg .mySlides.active {
+  display: block;
+}
+.detail-container .detailImg img {
+  width: 100%;
+  height: auto;
+}
+.detail-container .detailImg #btnController {
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  display: flex;
+  transform: translateY(-50%);
+}
+.detail-container .detailImg .prev, .detail-container .detailImg .next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+}
+.detail-container .detailImg .prev:hover, .detail-container .detailImg .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.detail-container .detailImg #btnDot {
+  text-align: center;
+  padding: 10px;
+}
+.detail-container .detailImg .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.detail-container .detailImg .dot.active {
+  background-color: #717171;
+}
+.detail-container .detailInfo {
+  width: 40%;
+  height: auto;
+  margin-left: 100px;
+  animation: slideInRight 1.5s forwards;
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%); /* Bắt đầu từ ngoài màn hình bên phải */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.detail-container .detailInfo img {
+  width: 80%;
+}
+.detail-container .detailInfo h1 {
+  Font-size: 30px;
+}
+.detail-container .detailInfo input {
+  margin-left: 20px;
+  width: 30px;
+}
+.detail-container .detailInfo label {
+  font-size: 25px;
+  font-weight: bold;
+}
+.detail-container .detailInfo button {
+  width: 30%;
+  height: 45px;
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 10px rgb(69, 67, 67);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.detail-container .detailInfo button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.detail-container .detailInfo button:active {
+  box-shadow: none;
+}/*# sourceMappingURL=ProductDetail.css.map */

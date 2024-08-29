@@ -1,0 +1,66 @@
+.top-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(203, 201, 201, 0.199);
+    padding-top: 50px;
+    padding-bottom: 100px;
+    a{
+      list-style: none;
+      text-decoration: none;
+      color: black;
+    }
+    .top-cart {
+        width: 70%;
+        height: auto;
+        box-shadow: 10px black;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        border-radius: 10px;
+        background-color: white;
+        margin-top: 50px;
+        text-decoration: none;
+        display: block;
+        a{
+          list-style: none;
+          text-decoration: none;
+        }
+        p{
+            font-size: 25px;
+            color: rgba(246, 22, 14, 0.983);
+            list-style: none;
+            text-decoration: none;
+        }
+        .images img{
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+          }
+          
+          .images .image{
+            position: relative;
+          }
+          
+          .images .first{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: z-index .5s ease,transform .6s ease;
+          }
+          
+          
+    }
+    .top-cart:hover{
+        transform: scale(1.01);
+        box-shadow: 2px 2px  rgba(201, 197, 197, 0.304);
+        .first{
+            z-index: 0;
+            background-color: red;
+        }
+    }
+}

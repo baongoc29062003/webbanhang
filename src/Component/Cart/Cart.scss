@@ -1,0 +1,93 @@
+.cart-container{
+    max-width:100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    .listCart{
+        width: 50%;
+        height: auto;
+        
+
+        table{
+            width: 100%;
+            text-align: center;
+            
+            img{
+                width: 30%;
+            }
+            th{
+                font-size: 25px;
+                border-bottom: 1px solid #ddd; /* Optional, to add border to cells */
+                padding: 8px;
+                button{
+                    width:60px;
+                    background-color:black;
+                    color: 	white;
+                    box-shadow: 0 0 5px rgb(107, 104, 104);
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+                button:active {
+                    box-shadow: none;
+                    background-color:red;
+                    color: 	white;
+                }
+            }
+            td{
+                width: 30%;
+                border-bottom: 1px solid #ddd; /* Optional, to add border to cells */
+                padding: 8px;
+                font-weight: bold;
+                span:hover{
+                    color: red;
+                    cursor: pointer;
+                }
+            }
+            tr{
+                border-bottom: 2px solid black;
+            }
+        }
+    }
+    .total{
+        width: 20%;
+        height: 300px;
+        margin-left: 50px;
+        div{
+          display: flex;
+          justify-content: space-between; 
+          border-bottom: 1px solid #ddd; 
+          h1{
+            color: rgb(208, 23, 23);
+          }
+          p{
+            font-size: 17px;
+          }
+        }
+        button{
+            width: 100%;
+            height: 35px;
+            margin-top: 10px;
+            background-color: black;
+            border-radius: 0px;
+            box-shadow: 0 0 0 0 0;
+            border: 1px solid black;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+
+        }
+        button:hover{
+            background-color: white;
+            color: black;
+        }
+
+    }
+}
+.title{
+    width: 100%;
+    display: flex;
+    margin-left: 10%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
