@@ -44,6 +44,9 @@
   color: red;
   cursor: pointer;
 }
+.cart-container .listCart table td input {
+  width: 30px;
+}
 .cart-container .listCart table tr {
   border-bottom: 2px solid black;
 }

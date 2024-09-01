@@ -2,22 +2,31 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import './Cart.css'
 import {DeleteOutlined } from '@ant-design/icons'
-import {deleteItem,clearAll} from '../../cartSlice'
+import {deleteItem,clearAll,updateQuantity} from '../../cartSlice'
 
 export const Cart = () => {
     const toralItemCart = useSelector((state) => state.cart.cartTotal.length)
     const thanhTien = useSelector((state) => state.cart.totalAmount)
-
     const cartItem = useSelector((state) => state.cart.cartTotal)
     const dispatch = useDispatch()
 
     const del =(index) => {
+        console.log('Deleting item at index:', index);
         dispatch(deleteItem(index))
     }   
 
     const handleClearAll = () => {
         dispatch(clearAll());
     };
+
+    const handleQuantityChange = (title, quantity) => {
+        // Chỉ cập nhật khi quantity là một số hợp lệ
+        if (quantity > 0) {
+          dispatch(updateQuantity({ title, quantity }));
+        }
+      };
+    console.log('Cart Items:', cartItem);
+    console.log('Total Amount:', thanhTien);
     return (
         <>
             <div className="title">
@@ -32,17 +41,24 @@ export const Cart = () => {
                                 <th>Sản phẩm</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Đơn giá</th>
+                                <th>Số lượng</th>
                                 <th><button onClick={() => handleClearAll()} >Xoá tất cả</button></th>
                             </tr>
                         </thead>
                         <tbody>
-                        {cartItem.map((cartItem) => (
+                        {cartItem.map((item,index) => (
                             
-                            <tr>
-                                <td><img src={cartItem.img1} alt="" /> </td>
-                                <td>{cartItem.title}</td>
-                                <td>{cartItem.price}</td>
-                                <td><span onClick={() => del()}><DeleteOutlined /></span></td>
+                            <tr key={index}>
+                                <td><img src={item.img1} alt="" /> </td>
+                                <td>{item.title}</td>
+                                <td>{item.price}</td>
+                                <td> <input
+                             type="number"
+                             value={item.quantity || 0}
+                             min="1"
+                             onChange={(e) => handleQuantityChange(item.title, parseInt(e.target.value, 10))}
+                    /></td>
+                                <td><span onClick={() => del(index)}><DeleteOutlined /></span></td>
                             </tr>
                         
                         ))}
