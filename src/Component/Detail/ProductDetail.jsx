@@ -7,9 +7,8 @@ import { useDispatch } from 'react-redux';
 import {addCart} from '../../cartSlice';
 
 
-export const ProductDetail = () => {
-    const { apiEndpoint } = useApi();
-    let {productId,endpoint} = useParams();
+export const ProductDetail = ({api}) => {
+    let {productId} = useParams();
     const [product,setProduct] = useState([]);
     const dispath = useDispatch();
     const addToCart = () => {
@@ -22,9 +21,7 @@ export const ProductDetail = () => {
         setProduct([]);
     const fetchProduct = async () => {
         try {
-            console.log(`Fetching from: ${apiEndpoint}${endpoint}/${productId}`);
-            console.log(`Fetching data from: ${apiEndpoint}`);
-            const response = await axios.get(`${apiEndpoint}${endpoint}/${productId}`);
+            const response = await axios.get(`${api}/product/${productId}`);
             console.log(response.data);
             setProduct(response.data);
         } catch (err) {
@@ -32,7 +29,7 @@ export const ProductDetail = () => {
         }
     };
     fetchProduct();
-    },[productId,endpoint,apiEndpoint]);
+    },[productId]);
     const [slideIndex, setSlideIndex] = useState(1);
     const totalSlides = 3;
 
@@ -93,11 +90,6 @@ export const ProductDetail = () => {
                     <p>Chất liệu: {product?.chatlieu} </p>
                     <p>Form dáng : {product?.form} </p>
                     <img src={product?.imgsize} alt="" />
-                    <h3>Size :</h3>
-                    <input type="radio" name="size" value="S" id="size-s" /><label >S</label>
-                    <input type="radio" name="size" value="M" id="size-m" /><label >M</label>
-                    <input type="radio" name="size" value="L" id="size-l" /><label >L</label>
-                    <input type="radio" name="size" value="XL" id="size-xl" /><label >XL</label>
                     <h1>{product?.price}₫</h1>
                     <div>
                     <button onClick={()=> addToCart()}>Thêm vào giỏ hàng</button>

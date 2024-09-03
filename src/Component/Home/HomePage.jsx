@@ -2,7 +2,7 @@ import { Header } from "../Header/Header"
 import { TrangChu } from "../Main/Trangchu"
 import {Footer } from "../Footer/Footer"
 import {createBrowserRouter, RouterProvider,Outlet} from 'react-router-dom';
-import {ListTop} from '../TopPage/ListTop'
+import {ListProduct} from '../Product/ListProduct'
 import { ProductDetail } from "../Detail/ProductDetail";
 import {ApiProvider} from '../ApiContext'
 import ErrorPage from "../ErrorPage/ErrorPage";
@@ -10,10 +10,6 @@ import { Cart } from "../Cart/Cart";
 
 
 const apiEndPoint ='https://66c15ceaf83fffcb58792b70.mockapi.io/baongoc03/';
-const apiEndPoint2 = 'https://66cd86d78ca9aa6c8ccaa7e6.mockapi.io/baongoc03/';
-const accessory ='accessory';
-const endpoint ="product"
-const boottom = "chitiet"
 const routerHome = createBrowserRouter([
 {
     path:'/',
@@ -32,19 +28,19 @@ const routerHome = createBrowserRouter([
         },
         {
             path: '/Top',
-            element: <ListTop api={apiEndPoint} endpoint ={endpoint}></ListTop>
+            element: <ListProduct api={apiEndPoint} danhmuc="1"></ListProduct>
         },
         {
             path:'/Bottom',
-            element: <ListTop api={apiEndPoint} endpoint ={boottom}></ListTop>
+            element: <ListProduct api={apiEndPoint} danhmuc ="2"></ListProduct>
         },
         {
-            path: '/detail/:endpoint/:productId',
+            path: '/detail/:productId',
             element: <ProductDetail api = {apiEndPoint}></ProductDetail>,
         },
         {
             path:'/Accessory',
-            element: <ListTop api={apiEndPoint2} endpoint ={accessory}></ListTop>
+            element: <ListProduct api={apiEndPoint} danhmuc ="3"></ListProduct>
         },
         {
             path:'/Cart',

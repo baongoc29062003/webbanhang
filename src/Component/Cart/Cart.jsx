@@ -50,7 +50,8 @@ export const Cart = () => {
                             
                             <tr key={index}>
                                 <td><img src={item.img1} alt="" /> </td>
-                                <td>{item.title}</td>
+                                <td>{item.title}
+                                </td>
                                 <td>{item.price}</td>
                                 <td> <input
                              type="number"
